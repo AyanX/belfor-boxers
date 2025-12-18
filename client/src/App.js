@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import HomePage from "./Components/HomePage/HomePage";
 import NavBar from "./Components/NavBar.js/NavBar";
+import Footer from "./Components/Footer/Footer";
 
 
 const Layout = () => {
@@ -16,6 +17,7 @@ const Layout = () => {
     <div>
       <NavBar />
       <main><Outlet /></main>
+      <Footer/>
     </div>
   );
 }

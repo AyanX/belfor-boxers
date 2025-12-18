@@ -1,128 +1,121 @@
-
-
 .testimonials-section {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4rem 1rem;
-    margin: 0 auto;
-    justify-content: space-between;
-}
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+  margin: 0 auto;
+  justify-content: space-between;
 
-
-.grid-container {
+  .grid-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1.5rem;
     width: 100%;
+
     .card {
-    background-color: #0a0a0a;
-    border: 1px solid #1a1a1a;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: all 0.3s ease;
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 650px;
-    flex: 1 1 300px; 
-}
-}
+      background-color: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.3s ease;
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 650px;
+      flex: 1 1 300px;
 
+      &:hover {
+        background-color: #0f0f0f;
+        border-color: #2a2a2a;
+        transform: translateY(-3px);
+      }
 
+      .quote-icon-container {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        pointer-events: none;
 
+        .quote-icon {
+          color: #1a1a1a;
+          opacity: 0.7;
+          z-index: 11;
+          transform: rotate(5deg);
+        }
+      }
 
+      .card-content-testimonial {
+        position: relative;
+        z-index: 1;
+      }
 
-.card:hover {
-    background-color: #0f0f0f;
-    border-color: #2a2a2a;
-    transform: translateY(-3px);
-}
+      .star-rating {
+        display: flex;
+        gap: 0.3rem;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
 
-.quote-icon-container {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    
-    pointer-events: none;
-}
+      .testimonial-text {
+        color: var(--light);
+        font-style: italic;
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+      }
 
-.quote-icon {
-    color: #1a1a1a;
-    opacity: 0.7;
-    z-index: 11;
-    transform: rotate(5deg);
-}
+      .card-footer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+        z-index: 1;
 
-.card-content-testimonial {
-    position: relative;
-    z-index: 1;
-}
+        .avatar {
+          width: 3.25rem;
+          height: 3.25rem;
+          border-radius: 50%;
+          background-color: var(--primary);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--dark);
+          font-weight: 700;
+          font-size: 1.125rem;
+        }
 
-.star-rating {
-    display: flex;
-    gap: 0.3rem;
-    color: var(--primary);
-    margin-bottom: .5rem;
-}
+        .user-info {
+          display: flex;
+          flex-direction: column;
 
-.testimonial-text {
-    color: var(--light);
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    font-weight: 400;
-}
+          .user-name {
+            color: var(--light);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            font-size: 1.1rem;
+          }
 
-.card-footer {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
-    z-index: 1;
-}
-
-.avatar {
-    width: 3.25rem;
-    height: 3.25rem;
-    border-radius: 50%;
-    background-color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--dark);
-    font-weight: 700;
-    font-size: 1.125rem;
-}
-
-.user-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.user-name {
-    color: var(--light);
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    font-size: 1.1rem;
-}
-
-.user-role {
-    color: var(--primary);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    margin-top: 2px;
-}
-
-@media (max-width: 768px) {
-    .testimonial-text {
-        font-size: 12px;
+          .user-role {
+            color: var(--primary);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            margin-top: 2px;
+          }
+        }
+      }
     }
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-text {
+      font-size: 12px;
+    }
+  }
 }

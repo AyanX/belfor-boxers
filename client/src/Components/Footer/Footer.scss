@@ -1,0 +1,231 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Oswald", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* utilities in Hero & Footer  */
+.uppercase {
+  text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
+}
+.font-bold {
+  font-weight: 700;
+}
+.tracking-wider {
+  letter-spacing: 0.1em;
+}
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+
+.hero {
+  position: relative;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--dark);
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("https://ik.imagekit.io/59p9lo9mv/hero_1200x800.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(0.5) brightness(0.65) contrast(1.1);
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 1.5rem;
+
+    h1 {
+      font-size: clamp(3rem, 12vw, 8rem);
+      line-height: 0.85;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      font-size: clamp(0.9rem, 2vw, 1.25rem);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-weight: 700;
+      color: var(--light);
+      letter-spacing: 0.2em;
+    }
+  }
+}
+
+.btn {
+  padding: 1.5rem 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--dark);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  border-radius: 20px;
+  border: 2px solid var(--primary);
+
+  &:hover {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+}
+
+footer {
+  background: var(--dark);
+  padding: 6rem 0 2rem;
+ 
+
+  .container.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .footer-col {
+      h3 {
+        font-size: 0.8rem;
+        letter-spacing: 0.25em;
+        margin-bottom: 2rem;
+        color: var(--primary);
+      }
+      li{
+        list-style: none;
+        a{
+            font-size: 12px;
+            margin: 0 5px;
+        }
+      }
+      .brand-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 2rem;
+      }
+
+      .address {
+        color: var(--gray);
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+       .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0; 
+        svg {
+          color: var(--primary);
+        }
+
+        & + .contact-item  {
+             margin-top: 1.5rem;
+        }
+
+        .contact-text {
+          min-width: 0; 
+          white-space: normal;
+          word-wrap: break-word;
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      h3 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        span {
+          color: var(--primary);
+          font-family: "Poppins", sans-serif;
+        }
+      }
+      @media (max-width: 750px) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+    footer{
+        padding: 30px 5px;
+    }
+    .container{
+        padding: 0;
+    }
+
+    .footer-col h3{
+        margin-bottom: 5px;
+    }
+
+
+  .container.footer-grid {
+    grid-template-columns: repeat(12,1fr) !important;
+    .full-width {
+      grid-column: 1 / -1 !important;
+      display: flex;
+      gap: 50px;
+    }
+    .contacts-col {
+      grid-column: 3 / -1 !important;
+    }
+  }
+  .container.footer-grid .logo h3 {
+    margin-bottom: 8px;
+  }
+  .container.footer-grid {
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .container.footer-grid .footer-col .contact-item .contact-text{
+    white-space: normal; 
+    overflow-wrap: break-word;
+  }
+}
