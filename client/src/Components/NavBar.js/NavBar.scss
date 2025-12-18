@@ -16,18 +16,20 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  overflow-y: hidden;
   right: 0;
   z-index: 100;
   background: var(--overlay);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  height: 80px;
+  height: 90px;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
+  width: auto;
   color: var(--primary);
 }
 
@@ -40,6 +42,7 @@ nav {
   font-size: 1.8rem;
   line-height: 1;
   letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .logo div span {
@@ -121,8 +124,18 @@ nav.active .links {
   gap: 2rem;
   animation: slideIn 0.3s ease-out;
 }
-
-@media (min-width: 768px) { 
+@media (max-width: 1000px){
+  nav{
+    gap: 12px;
+  }
+  .logo{
+    flex: 1;
+    img{
+      width: 160px;
+    }
+  }
+}
+@media (min-width: 830px) { 
   .links { display: flex; }
     .toggle {
       display: none;
@@ -131,6 +144,30 @@ nav.active .links {
       display: block;
     }
   }
+
+@media (max-width: 500px) { 
+    .logo{
+      img{
+        width: 100px;
+      }
+    }
+  }
+
+@media (max-width: 500px){
+  nav{padding: 0.8rem;}
+  .logo div h3{
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
 @keyframes slideIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }

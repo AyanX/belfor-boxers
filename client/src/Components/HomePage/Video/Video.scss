@@ -1,0 +1,25 @@
+.video-container {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 4rem !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+  @media (max-width: 1000px) {
+    width: 80%;
+  }
+  @media (max-width: 750px) {
+    width: 90%;
+  }
+  @media (max-width: 400px) {
+    width: 96%;
+  }
+ 
+}
+ .video-js .vjs-poster {
+  background-size: cover;
+}
+.video-js .vjs-poster img {
+  object-fit: cover;
+}

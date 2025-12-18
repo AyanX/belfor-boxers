@@ -2,17 +2,18 @@ import React from "react";
 import "./NavBar.scss";
 import { Menu, X, BicepsFlexed } from "lucide-react";
 import { useState } from "react";
+import logo from "../Assets/logo.svg";
 const NavBar = () => {
-  console.log("NAVBAR RENDERED")
+  console.log("NAVBAR RENDERED");
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div style={{ height: "80px" }}>
       <nav className={isOpen ? "active" : ""}>
         <div className="logo">
-          <BicepsFlexed size={28} />
+          <img src={logo} alt="Logo" />
           <div>
-            <h3>UNCLE-T</h3>
-            <span>ACADEMY</span>
+            <h3>UNCLE-T <span>ACADEMY</span></h3>
+            
           </div>
         </div>
 

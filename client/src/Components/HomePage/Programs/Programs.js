@@ -2,6 +2,7 @@ import React from 'react';
 import ProgramCard from './ProgramsCard.js';
 import { User, Users, Dumbbell } from 'lucide-react';
 import './Programs.scss';
+import SectionHeader from '../utils/SectionHeader.js';
 
 const programsData = [
   {
@@ -31,10 +32,7 @@ export default function Programs() {
     console.log("HOME Programs component rendered");
   return (
     <section className="programs-section" id="train">
-      <div className="section-header">
-        <span className="sub-title">TRAINING PROGRAMS</span>
-        <h2>WHAT WE OFFER</h2>
-      </div>
+      <SectionHeader subTitle="TRAINING PROGRAMS" title="WHAT WE OFFER" />
 
       <div className="programs-grid">
         {programsData.map((program, index) => (
