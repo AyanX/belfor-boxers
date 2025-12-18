@@ -30,24 +30,24 @@ const FooterContacts = () => {
             <h3 className="uppercase">Explore</h3>
             <ul className="footer-links">
               <li>
-                <a href="#" className="uppercase font-bold">
+                
                   Home
-                </a>
+                
               </li>
               <li>
-                <a href="#" className="uppercase font-bold">
+                
                   About Us
-                </a>
+                
               </li>
               <li>
-                <a href="#" className="uppercase font-bold">
+                
                   Programs
-                </a>
+                
               </li>
               <li>
-                <a href="#" className="uppercase font-bold">
+               
                   Coaches
-                </a>
+                
               </li>
             </ul>
           </div>
