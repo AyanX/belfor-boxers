@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.scss";
-import { Menu, X, BicepsFlexed } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "../Assets/logo.svg";
 const NavBar = () => {
