@@ -1,0 +1,125 @@
+.about-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px;
+  background-image: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.85)),
+    url("https://images.unsplash.com/photo-1544033527-b192daee1f5b?q=80&w=2070&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+
+  .badge {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    opacity: 0.9;
+  }
+
+  > div {
+    max-width: 900px;
+    margin-bottom: 32px;
+
+    .title {
+      font-size: clamp(3rem, 10vw, 5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .title.primary {
+      color: var(--primary);
+    }
+  }
+
+  .subtext {
+    max-width: 600px;
+    color: rgba(245, 245, 245, 0.7);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 500;
+  }
+}
+
+.stats {
+  width: 100%;
+  background-color: #0a0a0a;
+  border-top: 1px solid var(--border);
+
+  > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  }
+
+  .stat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0;
+
+    .icon {
+      color: var(--primary);
+      margin-bottom: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .icon {
+      transform: scale(1.1);
+    }
+
+    .value {
+      font-size: clamp(1.75rem, 5vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+  
+    }
+
+    .label {
+      color: rgba(245, 245, 245, 0.4);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+    }
+
+    @media (min-width: 768px) {
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 64px;
+        background-color: var(--border);
+        display: none;  }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .stats > div {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stat {
+
+      &::after {
+        display: block;
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
+}

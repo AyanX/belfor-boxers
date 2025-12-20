@@ -10,6 +10,7 @@ import {
 import HomePage from "./Components/HomePage/HomePage";
 import NavBar from "./Components/NavBar.js/NavBar";
 import Footer from "./Components/Footer/Footer";
+import About from "./Components/About/About";
 
 
 const Layout = () => {
@@ -27,6 +28,7 @@ export default function App() {
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
+        <Route path="about" element={<About/>} />
       </Route>
     )
   );

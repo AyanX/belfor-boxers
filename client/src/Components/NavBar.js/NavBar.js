@@ -1,8 +1,10 @@
 import React from "react";
 import "./NavBar.scss";
-import { Menu, X, BicepsFlexed } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "../Assets/logo.svg";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 const NavBar = () => {
   console.log("NAVBAR RENDERED");
   const [isOpen, setIsOpen] = useState(false);
@@ -12,23 +14,26 @@ const NavBar = () => {
         <div className="logo">
           <img src={logo} alt="Logo" />
           <div>
-            <h3>UNCLE-T <span>ACADEMY</span></h3>
-            
+            <h3>
+              UNCLE-T <span>ACADEMY</span>
+            </h3>
           </div>
         </div>
 
         <ul className="links">
           <li>
-            <a href="#home">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#train">Training</a>
+            <HashLink smooth to="/#train">
+              Training
+            </HashLink>
           </li>
           <li>
-            <a href="#schedule">Schedule</a>
+            <Link to="/schedule">Schedule</Link>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
 

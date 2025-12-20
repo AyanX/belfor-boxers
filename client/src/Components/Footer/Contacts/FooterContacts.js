@@ -2,6 +2,7 @@
 import React from "react";
 import logo from "../../Assets/logo.svg";
 import { Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 const FooterContacts = () => {
   return (
     <div>
@@ -30,24 +31,22 @@ const FooterContacts = () => {
             <h3 className="uppercase">Explore</h3>
             <ul className="footer-links">
               <li>
-                <a href="#" className="uppercase font-bold">
-                  Home
-                </a>
+                <Link to="/" className="uppercase font-bold">Home</Link>
               </li>
               <li>
-                <a href="#" className="uppercase font-bold">
+                <Link to="/about" className="uppercase font-bold">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="uppercase font-bold">
+                <Link to="/programs" className="uppercase font-bold">
                   Programs
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="uppercase font-bold">
+                <Link to="/coaches" className="uppercase font-bold">
                   Coaches
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
