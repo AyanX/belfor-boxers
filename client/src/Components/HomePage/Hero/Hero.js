@@ -1,5 +1,4 @@
 import "./Hero.scss"
-import { useState } from 'react';
 import { ArrowRight} from 'lucide-react';
 const Hero = () => {
   console.log("HERO SECTION RENDERED")
