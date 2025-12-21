@@ -20,7 +20,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        <ul className="links">
+        <ul className="links" onClick={() => setIsOpen(false)}>
           <li>
             <Link to="/">Home</Link>
           </li>

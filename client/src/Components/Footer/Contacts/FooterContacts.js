@@ -1,8 +1,9 @@
-
 import React from "react";
 import logo from "../../Assets/logo.svg";
 import { Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+
+import { HashLink } from "react-router-hash-link";
 const FooterContacts = () => {
   return (
     <div>
@@ -28,31 +29,32 @@ const FooterContacts = () => {
           </div>
 
           <div className="footer-col">
-            <h3 className="uppercase">Explore</h3>
+            <h3 >EXPLORE</h3>
             <ul className="footer-links">
               <li>
-                <Link to="/" className="uppercase font-bold">Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about" className="uppercase font-bold">
-                  About Us
-                </Link>
+                <HashLink smooth to="/#train">
+                  Training
+                </HashLink>
               </li>
               <li>
-                <Link to="/programs" className="uppercase font-bold">
-                  Programs
-                </Link>
+                <HashLink smooth to="/contact/#contact">
+                  Schedule
+                </HashLink>
               </li>
               <li>
-                <Link to="/coaches" className="uppercase font-bold">
-                  Coaches
-                </Link>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>
 
           <div className="footer-col contacts-col">
-            <h3 className="uppercase">Contact</h3>
+            <h3 >CONTACTS</h3>
             <ul className="footer-links">
               <li className="contact-item">
                 <Phone size={16} />

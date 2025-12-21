@@ -23,21 +23,7 @@ button {
 }
 
 /* utilities in Hero & Footer  */
-.uppercase {
-  text-transform: uppercase;
-}
-.italic {
-  font-style: italic;
-}
-.font-bold {
-  font-weight: 700;
-}
-.tracking-wider {
-  letter-spacing: 0.1em;
-}
-.tracking-tighter {
-  letter-spacing: -0.05em;
-}
+
 
 .hero {
   position: relative;
@@ -126,12 +112,15 @@ footer {
         letter-spacing: 0.25em;
         margin-bottom: 2rem;
         color: var(--primary);
+        font-weight: 700;
       }
       li{
         list-style: none;
+
+            margin:10px 0 !important;
         a{
-            font-size: 12px;
-            margin: 0 5px;
+            font-size: 18px;
+            font-weight: 500;
         }
       }
       .brand-row {

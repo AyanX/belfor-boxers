@@ -34,6 +34,7 @@ const CONTACT_DATA = [
 ];
 
 const Contact = () => {
+  console.log("CONTACT PAGE RENDERED")
   return (
     <>
     <div>

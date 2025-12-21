@@ -1,4 +1,3 @@
-
 import "./App.scss";
 import {
   createBrowserRouter,
@@ -12,25 +11,29 @@ import NavBar from "./Components/NavBar.js/NavBar";
 import Footer from "./Components/Footer/Footer";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
-
+import ScrollToTop from "./Components/Utils/ScrollToTop";
 
 const Layout = () => {
   return (
     <div>
-      <NavBar />
-      <main><Outlet /></main>
-      <Footer/>
+      <ScrollToTop>
+        <NavBar />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </ScrollToTop>
     </div>
   );
-}
+};
 
 export default function App() {
   const routes = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path="about" element={<About/>} />
-        <Route path="contact" element={<Contact/>} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
       </Route>
     )
   );
