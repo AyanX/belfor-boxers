@@ -5,7 +5,7 @@ import SectionHeader from "../utils/SectionHeader";
 import "./Video.scss";
 const Video = () => {
   console.log("Video component rendered");
-  const imageUrl = "https://ik.imagekit.io/59p9lo9mv/boxers.mp4";
+  const videoUrl = "https://ik.imagekit.io/nal7vhb1y/Boxers/boxersw2.mp4";
   const videoRef = useRef(null);
   const playerRef = React.useRef(null);
 
@@ -16,10 +16,10 @@ const Video = () => {
     loop: true,
     responsive: true,
     fluid: true,
-    poster:"https://ik.imagekit.io/59p9lo9mv/IMG_0661.HEIC",
+    poster:"https://ik.imagekit.io/nal7vhb1y/Boxers/IMG_0701_26.jpg",
     sources: [
       {
-        src: imageUrl,
+        src: videoUrl,
         type: "video/mp4",
       },
     ],

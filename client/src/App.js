@@ -9,9 +9,12 @@ import {
 import HomePage from "./Components/HomePage/HomePage";
 import NavBar from "./Components/NavBar.js/NavBar";
 import Footer from "./Components/Footer/Footer";
-import About from "./Components/About/About";
-import Contact from "./Components/Contact/Contact";
 import ScrollToTop from "./Components/Utils/ScrollToTop";
+import { Suspense } from "react";
+import Loader from "./Components/Utils/Loader";
+import React from "react";
+const About = React.lazy(() => import("./Components/About/About"));
+const Contact = React.lazy(() => import("./Components/Contact/Contact"));
 
 const Layout = () => {
   return (
@@ -32,8 +35,8 @@ export default function App() {
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="about" element={<Suspense fallback={<Loader />}><About /></Suspense>} />
+        <Route path="contact" element={<Suspense fallback={<Loader />}><Contact /></Suspense>} />
       </Route>
     )
   );

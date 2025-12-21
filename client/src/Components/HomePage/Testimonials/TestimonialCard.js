@@ -1,8 +1,8 @@
 
-import React from 'react';
+import {memo} from 'react';
 import { Star, Quote } from 'lucide-react';
 
-function StarRating({ rating }) {
+const StarRating = memo(function StarRating({ rating }) {
   return (
     <div className="star-rating">
       {[...Array(5)].map((_, i) => (
@@ -10,13 +10,14 @@ function StarRating({ rating }) {
           key={i}
           size={16}
           strokeWidth={i < rating ? 0 : 2}
-          fill={i < rating ? 'var(--primary)' : 'transparent'}
-          className={i < rating ? 'star active' : 'star inactive'}
+          fill={i < rating ? "var(--primary)" : "transparent"}
+          className={i < rating ? "star active" : "star inactive"}
         />
       ))}
     </div>
   );
-}
+});
+
 
 function TestimonialCard({ testimonial }) {
   return (
@@ -50,4 +51,4 @@ function TestimonialCard({ testimonial }) {
   );
 }
 
-export default TestimonialCard;
+export default TestimonialCard

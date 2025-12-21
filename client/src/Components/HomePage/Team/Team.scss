@@ -59,3 +59,11 @@
     width: 98%;
   }
 }
+
+.member-image {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+.member-image.fade-in {
+  opacity: 1;
+}
