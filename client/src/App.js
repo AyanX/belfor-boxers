@@ -11,6 +11,7 @@ import HomePage from "./Components/HomePage/HomePage";
 import NavBar from "./Components/NavBar.js/NavBar";
 import Footer from "./Components/Footer/Footer";
 import About from "./Components/About/About";
+import Contact from "./Components/Contact/Contact";
 
 
 const Layout = () => {
@@ -29,6 +30,7 @@ export default function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="about" element={<About/>} />
+        <Route path="contact" element={<Contact/>} />
       </Route>
     )
   );

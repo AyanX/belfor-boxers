@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import ValueCard from '../ValueCard/ValueCard';
 import './CoreValues.scss';
+import SubHeader from '../../../Utils/SubHeader';
 
 const VALUES_DATA = [
   {
@@ -54,16 +55,9 @@ const CoreValues = () => {
   return (
     <div className="core-values">
       <section>
-        <div className="header">
-          <div>
-            <h2>Our Core Values</h2>
-          </div>
-          <p>
-            The principles that guide everything we do inside and outside the
-            ring. Built on grit, sweat, and absolute dedication to the sport.
-          </p>
-        </div>
-
+        
+        <SubHeader title="Our Core Values"content="The principles that guide everything we do inside and outside the
+            ring. Built on grit, sweat, and absolute dedication to the sport." />
         <div className="values-grid">
           {VALUES_DATA.map((value) => (
             <ValueCard

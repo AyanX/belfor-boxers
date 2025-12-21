@@ -6,24 +6,24 @@ import './Team.scss';
 const teamMembers = [
   {
     id: '2',
-    imageUrl: 'https://ik.imagekit.io/59p9lo9mv/IMG_0661.HEIC?updatedAt=1765977889830',
+    imageUrl: 'https://ik.imagekit.io/nal7vhb1y/Boxers/IMG_0701_26.jpg',
 
   },
   {
     id: '3',
-    imageUrl: 'https://ik.imagekit.io/59p9lo9mv/IMG_0701.JPG',
+    imageUrl: 'https://ik.imagekit.io/nal7vhb1y/Boxers/WhatsApp.jpeg',
   },
   {
     id: '4',
-    imageUrl: 'https://ik.imagekit.io/59p9lo9mv/IMG_0662.HEIC',
+    imageUrl: 'https://ik.imagekit.io/nal7vhb1y/Boxers/IMG_0661_24.jpg?updatedAt=1766234041340',
   },
   {
     id: '5',
-    imageUrl: 'https://ik.imagekit.io/59p9lo9mv/IMG_0671.HEIC',
+    imageUrl: 'https://ik.imagekit.io/nal7vhb1y/Boxers/IMG_0662_23.jpg?updatedAt=1766234041263',
   },
   {
     id: '6',
-    imageUrl: 'https://ik.imagekit.io/59p9lo9mv/WhatsApp.jpeg',
+    imageUrl: 'https://ik.imagekit.io/nal7vhb1y/Boxers/IMG_0671_26.jpg?updatedAt=1766234039908',
   }
 
 ];

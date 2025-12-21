@@ -8,6 +8,11 @@
   --font-head: "Teko", sans-serif;
   --font-sub: "Teko", sans-serif;
   --font-body: "Poppins", sans-serif;
+   --primary: #ffd700;
+  --card-bg: #111111;
+  --input-bg: #0a0a0a;
+  --border: rgba(255, 255, 255, 0.1);
+  --text-muted: #888888;
 }
 
 * {
@@ -49,5 +54,38 @@ body {
     h2 {
       font-size: 2rem;
     }
+  }
+}
+
+.sub-header {
+  text-align: center;
+  margin-bottom: 48px;
+
+  h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    margin: 0 0 12px 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 96px;
+      height: 4px;
+      margin: 12px auto 0;
+      background: var(--primary);
+    }
+  }
+
+  p {
+    margin-top: 16px;
+    color: var(--gray);
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.05rem;
+    line-height: 1.6;
   }
 }

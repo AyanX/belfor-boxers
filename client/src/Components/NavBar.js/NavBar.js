@@ -30,7 +30,12 @@ const NavBar = () => {
             </HashLink>
           </li>
           <li>
-            <Link to="/schedule">Schedule</Link>
+            <HashLink smooth to="/contact/#contact">
+              Schedule
+            </HashLink>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
