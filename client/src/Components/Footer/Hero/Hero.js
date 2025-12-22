@@ -15,9 +15,10 @@ const Hero = () => {
           <p className="uppercase tracking-wider">
             Professional Training • Elite Results • The Sweet Science
           </p>
-          <button className="btn btn-primary uppercase font-bold tracking-wider">
-            <HashLink smooth to="/contact/#contact">START TRAINING</HashLink> <ArrowRight size={18} />
-          </button>
+
+          <HashLink smooth to="/contact/#contact">
+            <button className="btn btn-primary uppercase font-bold tracking-wider">START TRAINING</button>
+          </HashLink>
         </div>
       </section>
     </div>
