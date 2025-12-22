@@ -43,7 +43,13 @@ const NavBar = () => {
         </ul>
 
         <div className="actions">
-          <button className="join">JOIN NOW</button>
+          <button className="join">
+          
+          <HashLink smooth to="/contact/#contact">
+              JOIN NOW
+            </HashLink>
+          
+          </button>
           <button className="toggle" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={30} /> : <Menu size={30} />}
           </button>

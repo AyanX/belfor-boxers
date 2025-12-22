@@ -1,3 +1,4 @@
+import { HashLink } from "react-router-hash-link";
 import "./Hero.scss";
 import { ArrowRight } from "lucide-react";
 const Hero = () => {
@@ -13,7 +14,7 @@ const Hero = () => {
         <h1>
           UNLEASH
           <br />
-          <span className="outline">THE BEAST</span>
+          <span>THE BEAST</span>
           <br />
           WITHIN
         </h1>
@@ -25,17 +26,13 @@ const Hero = () => {
 
         <div className="cta">
           <button>
-            START TRAINING <ArrowRight size={18} />
+            <HashLink smooth to="/contact/#contact">START TRAINING</HashLink> <ArrowRight size={18} />
           </button>
-          <button className="outline-btn">VIEW PROGRAMS</button>
+          <button className="outline-btn">
+            <HashLink smooth to="/#train">VIEW PROGRAMS</HashLink>
+          </button>
         </div>
       </header>
-
-      <div className="decor">
-        <span>FIGHT</span>
-        <span>GRIND</span>
-        <span>GLORY</span>
-      </div>
 
       <video autoPlay muted loop playsInline className="video-bg">
         <source

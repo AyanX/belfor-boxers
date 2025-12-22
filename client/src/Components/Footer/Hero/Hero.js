@@ -1,4 +1,6 @@
+import { ArrowRight } from "lucide-react";
 import React from "react";
+import { HashLink } from "react-router-hash-link";
 
 const Hero = () => {
   return (
@@ -14,7 +16,7 @@ const Hero = () => {
             Professional Training • Elite Results • The Sweet Science
           </p>
           <button className="btn btn-primary uppercase font-bold tracking-wider">
-            Start Training
+            <HashLink smooth to="/contact/#contact">START TRAINING</HashLink> <ArrowRight size={18} />
           </button>
         </div>
       </section>
