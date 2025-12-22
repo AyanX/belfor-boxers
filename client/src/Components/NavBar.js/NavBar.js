@@ -2,7 +2,7 @@ import React from "react";
 import "./NavBar.scss";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "../Assets/logo.svg";
+import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 const NavBar = () => {

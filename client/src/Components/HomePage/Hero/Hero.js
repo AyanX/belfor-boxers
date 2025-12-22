@@ -1,25 +1,25 @@
-import "./Hero.scss"
-import { ArrowRight} from 'lucide-react';
+import "./Hero.scss";
+import { ArrowRight } from "lucide-react";
 const Hero = () => {
-  console.log("HERO SECTION RENDERED")
+  console.log("HERO SECTION RENDERED");
 
   return (
     <div className="boxing-app">
-     
-
       <header>
         <div className="tagline">
           <span>DESERT HUSTLE</span>
         </div>
-        
+
         <h1>
-          UNLEASH<br />
-          <span className="outline">THE BEAST</span><br />
+          UNLEASH
+          <br />
+          <span className="outline">THE BEAST</span>
+          <br />
           WITHIN
         </h1>
 
         <p>
-          The premier combat sports facility in Uganda. Precision, power, and 
+          The premier combat sports facility in Uganda. Precision, power, and
           unrelenting discipline. Start your legacy today.
         </p>
 
@@ -27,9 +27,7 @@ const Hero = () => {
           <button>
             START TRAINING <ArrowRight size={18} />
           </button>
-          <button className="outline-btn">
-            VIEW PROGRAMS
-          </button>
+          <button className="outline-btn">VIEW PROGRAMS</button>
         </div>
       </header>
 
@@ -38,8 +36,15 @@ const Hero = () => {
         <span>GRIND</span>
         <span>GLORY</span>
       </div>
+
+      <video autoPlay muted loop playsInline className="video-bg">
+        <source
+          src="https://ik.imagekit.io/nal7vhb1y/Boxers/boxersMuted.mp4"
+          type="video/mp4"
+        />
+      </video>
     </div>
   );
-}
+};
 
-export default Hero
+export default Hero;

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../Assets/logo.svg";
+import logo from "../../Assets/logo.png";
 import { Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 

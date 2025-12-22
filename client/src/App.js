@@ -15,6 +15,7 @@ import Loader from "./Components/Utils/Loader";
 import React from "react";
 const About = React.lazy(() => import("./Components/About/About"));
 const Contact = React.lazy(() => import("./Components/Contact/Contact"));
+const Error = React.lazy(() => import("./Components/Error/Error"));
 
 const Layout = () => {
   return (
@@ -37,6 +38,7 @@ export default function App() {
         <Route index element={<HomePage />} />
         <Route path="about" element={<Suspense fallback={<Loader />}><About /></Suspense>} />
         <Route path="contact" element={<Suspense fallback={<Loader />}><Contact /></Suspense>} />
+        <Route path="*" element={<Suspense fallback={<Loader />}><Error /></Suspense>} />
       </Route>
     )
   );
