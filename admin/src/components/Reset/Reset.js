@@ -1,38 +1,44 @@
-import { useState, useCallback, useMemo } from 'react';
-import { Key, Mail, Lock, Shield, Check } from 'lucide-react';
-import { updateCredentials as apiUpdateCredentials } from '../api/api';
-import './Reset.scss';
+import { useState, useCallback, useMemo } from "react";
+import { Key, Mail, Lock, Shield, Check } from "lucide-react";
+import { updateCredentials as apiUpdateCredentials } from "../api/api";
+
+import "./Reset.scss";
 
 function Reset() {
   const [credentials, setCredentials] = useState({
-    adminEmail: 'admin@uncleboxing.com',
-    newPassword: '',
-    confirmPassword: '',
+    adminEmail: "admin@uncleboxing.com",
+    newPassword: "",
+    confirmPassword: "",
   });
 
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState({ type: '', text: '' });
+  const [message, setMessage] = useState({ type: "", text: "" });
 
   const handleChange = useCallback((field, value) => {
-    setCredentials(prev => ({ ...prev, [field]: value }));
+    setCredentials((prev) => ({ ...prev, [field]: value }));
   }, []);
 
   const isPasswordValid = useMemo(() => {
     if (!credentials.newPassword && !credentials.confirmPassword) return true;
-    return credentials.newPassword === credentials.confirmPassword &&
-           credentials.newPassword.length >= 8;
+    return (
+      credentials.newPassword === credentials.confirmPassword &&
+      credentials.newPassword.length >= 8
+    );
   }, [credentials.newPassword, credentials.confirmPassword]);
 
   const hasChanges = useMemo(() => {
-    return credentials.newPassword !== '' || credentials.confirmPassword !== '';
+    return credentials.newPassword !== "" || credentials.confirmPassword !== "";
   }, [credentials]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage({ type: '', text: '' });
+    setMessage({ type: "", text: "" });
 
     if (!isPasswordValid) {
-      setMessage({ type: 'error', text: 'Passwords must match and be at least 8 characters.' });
+      setMessage({
+        type: "error",
+        text: "Passwords must match and be at least 8 characters.",
+      });
       return;
     }
 
@@ -40,21 +46,24 @@ function Reset() {
 
     try {
       await apiUpdateCredentials(credentials);
-      setMessage({ type: 'success', text: 'Credentials updated successfully!' });
+      setMessage({
+        type: "success",
+        text: "Credentials updated successfully!",
+      });
       setCredentials({
         adminEmail: credentials.adminEmail,
-        newPassword: '',
-        confirmPassword: '',
+        newPassword: "",
+        confirmPassword: "",
       });
     } catch (error) {
-      setMessage({ type: 'error', text: error.message });
+      setMessage({ type: "error", text: error.message });
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="reset">
+    <div className="reset reset-section">
       <div className="head">
         <Key />
         <h2>Reset Email/Password</h2>
@@ -68,7 +77,7 @@ function Reset() {
             <input
               type="email"
               value={credentials.adminEmail}
-              onChange={(e) => handleChange('adminEmail', e.target.value)}
+              onChange={(e) => handleChange("adminEmail", e.target.value)}
               className="input"
             />
             <p>Current login email address</p>
@@ -80,7 +89,7 @@ function Reset() {
             <input
               type="password"
               value={credentials.newPassword}
-              onChange={(e) => handleChange('newPassword', e.target.value)}
+              onChange={(e) => handleChange("newPassword", e.target.value)}
               placeholder="••••••••"
               className="input"
             />
@@ -93,7 +102,7 @@ function Reset() {
             <input
               type="password"
               value={credentials.confirmPassword}
-              onChange={(e) => handleChange('confirmPassword', e.target.value)}
+              onChange={(e) => handleChange("confirmPassword", e.target.value)}
               placeholder="••••••••"
               className="input"
             />
@@ -101,7 +110,9 @@ function Reset() {
         </div>
 
         {message.text && (
-          <div role="status" data-type={message.type}>{message.text}</div>
+          <div role="status" data-type={message.type}>
+            {message.text}
+          </div>
         )}
 
         <div>
@@ -111,7 +122,7 @@ function Reset() {
             className="btn"
           >
             <Shield size={16} />
-            {loading ? 'Updating...' : 'Update Credentials'}
+            {loading ? "Updating..." : "Update Credentials"}
           </button>
         </div>
       </form>

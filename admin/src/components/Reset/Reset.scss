@@ -55,11 +55,7 @@
 
     p { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
 
-    /* nth-child example: give first field more visual weight */
-    &:nth-child(1) { }
   }
-
-  /* message rendered without a class, scoped by role and data-type */
   .form > [role="status"] {
     padding: 0.75rem 1rem;
     border-radius: 0.375rem;
@@ -69,7 +65,6 @@
     &[data-type="error"] { background-color: rgba(255,82,82,0.1); border: 1px solid rgba(255,82,82,0.3); color: #ff5252; }
   }
 
-  /* footer wrapper is the last direct div inside form */
   .form > div:last-of-type { display: flex; justify-content: flex-end; }
 
   .btn {
