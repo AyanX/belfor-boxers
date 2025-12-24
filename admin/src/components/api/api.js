@@ -1,24 +1,18 @@
-const API_BASE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1`;
-const ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-const headers = {
-  'Authorization': `Bearer ${ANON_KEY}`,
-  'Content-Type': 'application/json',
-};
+import axios from "axios";
+const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:5000";
 
 export const updatePricing = async (pricingData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/update-pricing`, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(pricingData),
-    });
+    const response = await axios.post(
+      `${API_BASE_URL}/contacts/prices`,
+      pricingData
+    );
 
-    if (!response.ok) {
-      throw new Error('Failed to update pricing');
+    if (response.status !== 201) {
+      throw new Error("Failed to update pricing");
     }
 
-    return await response.json();
+    return response.data;
   } catch (error) {
     throw error;
   }
@@ -26,17 +20,17 @@ export const updatePricing = async (pricingData) => {
 
 export const updateContact = async (contactData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/update-contact`, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(contactData),
-    });
 
-    if (!response.ok) {
-      throw new Error('Failed to update contact info');
+    const response = await axios.post(
+      `${API_BASE_URL}/contacts`,
+      contactData
+    );
+
+    if (response.status !== 201) {
+      throw new Error("Failed to update contact info");
     }
 
-    return await response.json();
+    return response.data;
   } catch (error) {
     throw error;
   }
@@ -44,17 +38,13 @@ export const updateContact = async (contactData) => {
 
 export const updateCredentials = async (credentialsData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/update-credentials`, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(credentialsData),
-    });
+    const response = await axios.post(`${API_BASE_URL}/reset`, credentialsData);
 
-    if (!response.ok) {
-      throw new Error('Failed to update credentials');
+    if (response.status !== 201) {
+      throw new Error("Failed to update credentials");
     }
 
-    return await response.json();
+    return response.data;
   } catch (error) {
     throw error;
   }

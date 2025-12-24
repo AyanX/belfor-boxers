@@ -30,18 +30,18 @@ const contactsGet = async (req, res) => {
 
     if (contacts.length > 0) {
       foundContacts = contacts[0];
-    }else{
+    } else {
       foundContacts = contacts;
     }
 
     const prices = await db.select().from(pricesTable);
     if (prices.length > 0) {
       foundPrices = prices[0];
-    }else{
+    } else {
       foundPrices = prices;
     }
 
-    res.status(200).json({...foundContacts, ...foundPrices});
+    res.status(200).json({ ...foundContacts, ...foundPrices });
   } catch (error) {
     console.error("Error fetching contacts:", error);
     res.status(500).send({ message: "Internal Server Error" });
@@ -49,12 +49,18 @@ const contactsGet = async (req, res) => {
 };
 
 const pricesPost = async (req, res) => {
+  console.log("NEW PRICES ADD REQUEST");
+
   try {
-    if (!req.body.oneVone || !req.body.groupClasses || !req.body.smallGroup) {
+    const {
+      privateSession: oneVone,
+      smallGroup: smallGroup,
+      groupClass: groupClasses,
+    } = req.body;
+
+    if (!oneVone || !groupClasses || !smallGroup) {
       return res.status(400).json({ message: "All price fields are required" });
     }
-
-    const { oneVone, groupClasses, smallGroup } = req.body;
 
     await db.delete(pricesTable);
 

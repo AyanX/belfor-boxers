@@ -4,9 +4,10 @@ import { updateCredentials as apiUpdateCredentials } from "../api/api";
 
 import "./Reset.scss";
 
-function Reset() {
+function Reset({data}) {
+ 
   const [credentials, setCredentials] = useState({
-    adminEmail: "admin@uncleboxing.com",
+    adminEmail: data || "admin@uncleboxing.com",
     newPassword: "",
     confirmPassword: "",
   });
@@ -22,7 +23,7 @@ function Reset() {
     if (!credentials.newPassword && !credentials.confirmPassword) return true;
     return (
       credentials.newPassword === credentials.confirmPassword &&
-      credentials.newPassword.length >= 8
+      credentials.newPassword.length >= 6
     );
   }, [credentials.newPassword, credentials.confirmPassword]);
 
@@ -61,6 +62,9 @@ function Reset() {
       setLoading(false);
     }
   };
+
+
+  
 
   return (
     <div className="reset reset-section">

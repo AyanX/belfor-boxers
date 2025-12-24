@@ -5,9 +5,13 @@ import { Link } from "react-router-dom";
 
 import { HashLink } from "react-router-hash-link";
 import useFetchData from "../../Utils/useData";
+import Loader from "../../Utils/Loader";
 const FooterContacts = () => {
 
-  const {data} =useFetchData();
+  const {data,loading} =useFetchData();
+  if(loading){
+    return <Loader />;
+  }
 
   const {phone, email} = data || {};
 

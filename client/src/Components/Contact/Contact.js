@@ -4,15 +4,12 @@ import "./Contact.scss";
 import SubHeader from "../Utils/SubHeader";
 import Facility from "./Facility/Facility";
 import Form from "./Form/Form";
-import useFetchData from "../Utils/useData";
 
 
 
-const Contact = () => {
+const Contact = ({data}) => {
   console.log("CONTACT PAGE RENDERED")
-  const {data} = useFetchData();
-
-
+ 
   const CONTACT_DATA = useMemo(()=>[
     {
     id: "1",
@@ -37,10 +34,6 @@ const Contact = () => {
       "We reply within 24 hours",
     ],
   }], [data ]);
-
-
-
-
 
   return (
     <>

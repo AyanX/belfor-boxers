@@ -2,11 +2,17 @@ import { useState, useCallback, useMemo } from 'react';
 import { Phone, Mail, AlertTriangle } from 'lucide-react';
 import { updateContact as apiUpdateContact } from '../api/api';
 import './Contact.scss';
+import useFetchData from '../Utils/useData';
 
 function Contact() {
+
+  const {data} = useFetchData()
+
+  const {phone, email} = data?.data || {}
+
   const [contact, setContact] = useState({
-    phone: '+256 777 123 456',
-    email: 'info@uncleboxing.com',
+    phone: phone || '+256 777 123 456',
+    email: email || 'info@uncleboxing.com',
   });
 
   const [loading, setLoading] = useState(false);
@@ -18,8 +24,10 @@ function Contact() {
 
   const hasChanges = useMemo(() => {
     return contact.phone !== '+256 777 123 456' ||
-           contact.email !== 'info@uncleboxing.com';
-  }, [contact]);
+           contact.phone !== phone ||
+           contact.email !== 'info@uncleboxing.com'||
+            contact.email !== email;
+  }, [contact,email,phone]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

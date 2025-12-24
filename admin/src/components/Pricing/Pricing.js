@@ -3,12 +3,17 @@ import { Check } from 'lucide-react';
 import { updatePricing as apiUpdatePricing } from '../api/api';
 import './Pricing.scss';
 
-function Pricing() {
+function Pricing(data) {
+
+  const {oneVone, smallGroup, groupClasses} = data?.data || {};
+
   const [pricing, setPricing] = useState({
-    privateSession: '50000',
-    smallGroup: '30000',
-    groupClass: '15000',
+    privateSession: oneVone || '50000',
+    smallGroup: smallGroup || '30000',
+    groupClass: groupClasses || '15000',
   });
+
+
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });

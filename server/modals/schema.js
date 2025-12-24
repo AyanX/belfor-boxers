@@ -26,4 +26,11 @@ const pricesTable = mysqlTable('prices_table', {
  smallGroup: varchar('small_group', { length: 50 }).notNull(),
 });
 
-module.exports = { MessagesTable, ContactsTable, pricesTable }
+const AdminTable = mysqlTable('admin_table', {
+ email: varchar('email', { length: 255 }).notNull().primaryKey(),
+ password: varchar('password', { length: 255 }).notNull(),
+});
+
+
+
+module.exports = { MessagesTable, ContactsTable, pricesTable, AdminTable }
