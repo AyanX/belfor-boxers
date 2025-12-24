@@ -1,0 +1,117 @@
+
+.header-section {
+  min-width: 400px;
+}
+
+.dashboard-container {
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom:1px solid var(--border);
+  flex-direction: column;
+
+  .dashboard-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+
+    .header-section {
+      min-width: 400px;
+
+      p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+    }
+
+    .stats-section {
+      display: flex;
+      gap: 1rem;
+
+      .stat-card {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        background-color: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 0.75rem;
+        min-width: 300px;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: #161616;
+        }
+
+        .icon-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 3.5rem;
+          height: 3.5rem;
+          border-radius: 0.5rem;
+          margin-right: 1.25rem;
+        }
+
+        .stat-content {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .stat-value {
+          font-family: var(--font-head);
+          font-size: 2.5rem;
+          font-weight: 700;
+          line-height: 1;
+        }
+
+        .stat-label {
+          font-size: 0.75rem;
+          color: var(--text-muted);
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-top: 0.25rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 780px) {
+    .dashboard-layout {
+      flex-direction: column;
+      gap: 20px;
+      align-items: unset;
+    }
+
+    .stats-section {
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+
+      .stat-card {
+        min-width: 100%;
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .dashboard-layout .stat-value {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 460px) {
+    .dashboard-layout .header-section h1 {
+      font-size: 1.25rem;
+    }
+    .dashboard-layout .header-section {
+      min-width: 100%;
+    }
+  }
+}
