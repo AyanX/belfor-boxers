@@ -1,20 +1,19 @@
-const express = require("express")
-const contactsRouter = express.Router()
-const {contactsPost} = require("../controllers/contacts.controllers")
+const express = require("express");
+const contactsRouter = express.Router();
+const {
+  contactsPost,
+  contactsGet,
+  pricesPost,
+  pricesGet
+} = require("../controllers/contacts.controller");
 
 // Define your contacts routes here
-contactsRouter.post("/", contactsPost)
+contactsRouter.post("/", contactsPost);
 
-contactsRouter.get("/", (req, res) => {
-    // Logic to get all contacts
-    res.status(200).send("List of contacts")
-})
+contactsRouter.get("/", contactsGet);
 
+contactsRouter.post("/prices", pricesPost);
 
-contactsRouter.post("/prices", (req, res) => {
-    // Logic to add new prices
-    res.status(201).send("Prices added")
-})
+contactsRouter.get("/prices", pricesGet);
 
-
-module.exports = contactsRouter
+module.exports = contactsRouter;

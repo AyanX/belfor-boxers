@@ -14,8 +14,7 @@ const {mysqlTable, serial, varchar} = require("drizzle-orm/mysql-core")
 });
 
 const ContactsTable = mysqlTable('contacts_table', {
- id: serial('id').primaryKey(),
- email: varchar('email', { length: 255 }).notNull(),
+ email: varchar('email', { length: 255 }).notNull().primaryKey(),
  phone: varchar('phone', { length: 20 }).notNull(),
 });
 
