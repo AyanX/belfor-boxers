@@ -1,4 +1,6 @@
 import "./App.scss";
+import { Suspense } from "react";
+import React from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -10,9 +12,9 @@ import HomePage from "./Components/HomePage/HomePage";
 import NavBar from "./Components/NavBar.js/NavBar";
 import Footer from "./Components/Footer/Footer";
 import ScrollToTop from "./Components/Utils/ScrollToTop";
-import { Suspense } from "react";
+
 import Loader from "./Components/Utils/Loader";
-import React from "react";
+
 const About = React.lazy(() => import("./Components/About/About"));
 const Contact = React.lazy(() => import("./Components/Contact/Contact"));
 const Error = React.lazy(() => import("./Components/Error/Error"));

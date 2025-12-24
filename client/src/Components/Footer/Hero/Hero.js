@@ -1,5 +1,4 @@
-import { ArrowRight } from "lucide-react";
-import React from "react";
+
 import { HashLink } from "react-router-hash-link";
 
 const Hero = () => {

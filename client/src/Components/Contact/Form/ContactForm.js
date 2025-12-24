@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Send } from "lucide-react";
 import SubHeader from "../../Utils/SubHeader";
+import { submitMessage } from "../../Utils/apiPost";
 
 const ContactForm = ({ onNotify }) => {
   const [formData, setFormData] = useState({
@@ -21,11 +22,11 @@ const ContactForm = ({ onNotify }) => {
     setIsSubmitting(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      if (!formData.name || !formData.email || !formData.message) {
+      if (!formData.name ||!formData.subject || !formData.email || !formData.message) {
         throw new Error("Please complete all required fields.");
       }
+
+      await submitMessage(formData);
 
       onNotify({
         type: "success",

@@ -1,40 +1,47 @@
-import React from "react";
+import React, { useMemo } from "react";
 import ContactCard from "./ContactCard";
 import "./Contact.scss";
 import SubHeader from "../Utils/SubHeader";
 import Facility from "./Facility/Facility";
 import Form from "./Form/Form";
-const CONTACT_DATA = [
-  {
+import useFetchData from "../Utils/useData";
+
+
+
+const Contact = () => {
+  console.log("CONTACT PAGE RENDERED")
+  const {data} = useFetchData();
+
+
+  const CONTACT_DATA = useMemo(()=>[
+    {
     id: "1",
     type: "LOCATION",
     title: "LOCATION",
     details: [
       "Kampala, Uganda",
-      "Central Business District",
-      "Near National Stadium",
     ],
   },
   {
     id: "2",
     type: "PHONE",
     title: "PHONE",
-    details: ["+256 XXX XXX XXX", "+256 XXX XXX XXX", "Mon - Sat: 6AM - 9PM"],
+    details: [  data?.phone || "+256 XXX XXX XXX", "Mon - Sat: 6AM - 9PM"],
   },
   {
     id: "3",
     type: "EMAIL",
     title: "EMAIL",
     details: [
-      "info@uncletboxing.com",
-      "training@uncletboxing.com",
+       data?.email || "info@uncletboxing.com",
       "We reply within 24 hours",
     ],
-  },
-];
+  }], [data ]);
 
-const Contact = () => {
-  console.log("CONTACT PAGE RENDERED")
+
+
+
+
   return (
     <>
     <div>

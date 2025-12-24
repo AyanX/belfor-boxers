@@ -26,10 +26,22 @@ const contactsPost = async (req, res) => {
 const contactsGet = async (req, res) => {
   try {
     const contacts = await db.select().from(ContactsTable);
+    let foundContacts, foundPrices;
+
     if (contacts.length > 0) {
-      return res.status(200).json(contacts[0]);
+      foundContacts = contacts[0];
+    }else{
+      foundContacts = contacts;
     }
-    res.status(200).json(contacts);
+
+    const prices = await db.select().from(pricesTable);
+    if (prices.length > 0) {
+      foundPrices = prices[0];
+    }else{
+      foundPrices = prices;
+    }
+
+    res.status(200).json({...foundContacts, ...foundPrices});
   } catch (error) {
     console.error("Error fetching contacts:", error);
     res.status(500).send({ message: "Internal Server Error" });

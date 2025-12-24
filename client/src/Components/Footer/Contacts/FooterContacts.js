@@ -4,7 +4,13 @@ import { Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { HashLink } from "react-router-hash-link";
+import useFetchData from "../../Utils/useData";
 const FooterContacts = () => {
+
+  const {data} =useFetchData();
+
+  const {phone, email} = data || {};
+
   return (
     <div>
       <footer>
@@ -29,7 +35,7 @@ const FooterContacts = () => {
           </div>
 
           <div className="footer-col">
-            <h3 >EXPLORE</h3>
+            <h3>EXPLORE</h3>
             <ul className="footer-links">
               <li>
                 <Link to="/">Home</Link>
@@ -54,18 +60,18 @@ const FooterContacts = () => {
           </div>
 
           <div className="footer-col contacts-col">
-            <h3 >CONTACTS</h3>
+            <h3>CONTACTS</h3>
             <ul className="footer-links">
               <li className="contact-item">
                 <Phone size={16} />
                 <span className="contact-text font-bold tracking-wider">
-                  +256 700 123 456
+                  {phone || "+256 700 123 456"}
                 </span>
               </li>
               <li className="contact-item">
                 <Mail size={16} />
                 <span className="contact-text font-bold tracking-wider uppercase">
-                  train@uncletboxing.com
+                  {email || "train@uncletboxing.com"}
                 </span>
               </li>
             </ul>
