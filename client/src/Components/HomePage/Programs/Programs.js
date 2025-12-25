@@ -3,17 +3,19 @@ import ProgramCard from "./ProgramsCard.js";
 import { User, Users, Dumbbell } from "lucide-react";
 import "./Programs.scss";
 import SectionHeader from "../utils/SectionHeader.js";
-import useFetchData from "../../Utils/useData.js";
+import { useOutletContext } from "react-router-dom";
+
+
+
+
 
 export default function Programs() {
-  console.log("HOME Programs component rendered");
- 
-  const {data} =useFetchData();
+  const { data } = useOutletContext();
   const programsData = useMemo(
     () => [
       {
         title: "1-ON-1 TRAINING",
-        price: `${data?.oneVone || 120} USD`,
+        price: `${data?.oneVone || 100} USD`,
         tag: "1v1",
         image: "https://ik.imagekit.io/nal7vhb1y/Boxers/1v1.jpg",
         icon: User,
@@ -31,7 +33,7 @@ export default function Programs() {
       },
       {
         title: "GROUP CLASSES",
-        price: `${data?.groupClasses || 120} USD`,
+        price: `${data?.groupClasses || 100} USD`,
         tag: "group",
         image: "https://ik.imagekit.io/nal7vhb1y/Boxers/group.jpeg",
         icon: Dumbbell,

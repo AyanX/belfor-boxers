@@ -21,20 +21,6 @@ const Contact = React.lazy(() => import("./Components/Contact/Contact"));
 const Error = React.lazy(() => import("./Components/Error/Error"));
 
 const Layout = () => {
-  return (
-    <div>
-      <ScrollToTop>
-        <NavBar />
-        <main>
-          <Outlet />
-        </main>
-        <Footer/>
-      </ScrollToTop>
-    </div>
-  );
-};
-
-export default function App() {
 
   const {data,loading} = useFetchData()
 
@@ -42,12 +28,27 @@ export default function App() {
     return <Loader />
   }
 
+
+  return (
+    <div>
+      <ScrollToTop>
+        <NavBar />
+        <main>
+          <Outlet context={{data}} />
+        </main>
+        <Footer data={data} />
+      </ScrollToTop>
+    </div>
+  );
+};
+
+export default function App() {
   const routes = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="about" element={<Suspense fallback={<Loader />}><About /></Suspense>} />
-        <Route path="contact" element={<Suspense fallback={<Loader />}><Contact data={data.data} /></Suspense>} />
+        <Route path="contact" element={<Suspense fallback={<Loader />}><Contact /></Suspense>} />
         <Route path="*" element={<Suspense fallback={<Loader />}><Error /></Suspense>} />
       </Route>
     )
