@@ -5,8 +5,9 @@ import { useState } from "react";
 import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+
+
 const NavBar = () => {
-  console.log("NAVBAR RENDERED");
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div style={{ height: "80px" }}>
