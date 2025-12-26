@@ -6,14 +6,16 @@ const {
   pricesPost,
   pricesGet
 } = require("../controllers/contacts.controller");
+const { verifyToken } = require("../utils/jwt");
 
 // Define your contacts routes here
-contactsRouter.post("/", contactsPost);
-
 contactsRouter.get("/", contactsGet);
 
-contactsRouter.post("/prices", pricesPost);
-
 contactsRouter.get("/prices", pricesGet);
+
+
+contactsRouter.post("/" ,verifyToken , contactsPost);
+contactsRouter.post("/prices", verifyToken, pricesPost);
+
 
 module.exports = contactsRouter;

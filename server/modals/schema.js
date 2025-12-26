@@ -1,7 +1,7 @@
 
 const {boolean} = require("drizzle-orm/gel-core")
 
-const {mysqlTable, serial, varchar} = require("drizzle-orm/mysql-core")
+const {mysqlTable, serial, varchar,timestamp} = require("drizzle-orm/mysql-core")
 
 
  const MessagesTable = mysqlTable('messages_table', {
@@ -11,6 +11,7 @@ const {mysqlTable, serial, varchar} = require("drizzle-orm/mysql-core")
   message: varchar('message', { length: 1000 }).notNull(),
   subject: varchar('subject', { length: 255 }).notNull(),
   read:boolean('read').default(false).notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
 });
 
 const ContactsTable = mysqlTable('contacts_table', {

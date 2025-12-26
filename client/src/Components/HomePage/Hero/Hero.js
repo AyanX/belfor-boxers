@@ -2,7 +2,6 @@ import { HashLink } from "react-router-hash-link";
 import "./Hero.scss";
 import { ArrowRight } from "lucide-react";
 const Hero = () => {
-  console.log("HERO SECTION RENDERED");
 
   return (
     <div className="boxing-app">

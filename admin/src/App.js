@@ -2,6 +2,9 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import './App.scss';
 import LoginPage from './components/Login/Login';
 import LayOut from './components/LayOut/LayOut';
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
 
 function App() {
   const routes = createBrowserRouter(createRoutesFromElements(

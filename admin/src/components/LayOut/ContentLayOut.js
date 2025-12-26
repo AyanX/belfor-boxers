@@ -5,9 +5,20 @@ import Reset from "../Reset/Reset";
 import AppHeader from "../Utils/AppHeader";
 import useFetchData from "../Utils/useData";
 import Loader from "../Utils/Loader";
+import {useNavigate} from "react-router-dom"
+
 
 const ContentLayOut = () => {
-  const { data, loading,resetData } = useFetchData();
+  const { data, loading,resetData,error } = useFetchData();
+  const navigate = useNavigate()
+  if(error){
+    navigate("/login") 
+  }
+
+  if(loading){
+    return <Loader />
+  }
+
   return (
     <div className="app-container">
       <div className="app-wrapper">
@@ -20,6 +31,7 @@ const ContentLayOut = () => {
               <Pricing data={data} />
               <Contact data={data} />
               <Reset data={resetData} />
+              
             </div>
           </>
         )}

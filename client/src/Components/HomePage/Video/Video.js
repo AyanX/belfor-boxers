@@ -4,7 +4,6 @@ import "video.js/dist/video-js.css";
 import SectionHeader from "../utils/SectionHeader";
 import "./Video.scss";
 const Video = () => {
-  console.log("Video component rendered");
   const videoUrl = "https://ik.imagekit.io/nal7vhb1y/Boxers/boxersw2.mp4";
   const videoRef = useRef(null);
   const playerRef = React.useRef(null);

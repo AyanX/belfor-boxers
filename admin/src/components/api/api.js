@@ -49,3 +49,13 @@ export const updateCredentials = async (credentialsData) => {
     throw error;
   }
 };
+
+export const logout = async ()=>{
+  try {
+    await axios.post(`${API_BASE_URL}/logout/adm`);
+    return 200
+  } catch (error) {
+    console.log("Error logging out")
+    return
+  }
+}

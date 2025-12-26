@@ -15,6 +15,13 @@
       "when": 1766581229642,
       "tag": "0001_jittery_loa",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1766756101620,
+      "tag": "0002_panoramic_the_initiative",
+      "breakpoints": true
     }
   ]
 }

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Mail, Key, LogIn, Loader2 } from "lucide-react";
 import "./Login.scss";
 import SubHeader from "../Utils/SubHeader";
+import axios from "axios";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -23,26 +24,24 @@ export default function LoginPage() {
     });
   };
 
+  const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setAuthError("");
 
     try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await axios.post(`${API}/login/adm`, {
+        email: formData.email,
+        password: formData.password,
+      });
 
-      if (response.ok) {
+      if (response.status === 200) {
         // Short delay for visual feedback of the loading state
         setTimeout(() => {
           setIsSubmitting(false);
-          navigate("/success");
+          navigate("/");
         }, 1000);
       } else {
         throw new Error("Login failed");
