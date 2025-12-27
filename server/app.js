@@ -14,7 +14,7 @@ app.use(cors({
     origin: ['http://localhost:3000', 'https://admin.belfor-boxers.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], 
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'] // Explicitly allow these
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(cookieParser())
