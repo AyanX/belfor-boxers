@@ -21,7 +21,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "studio": "drizzle-kit studio",
-    "migrate:dev": "drizzle-kit migrate dev"
+    "migrate:dev": "drizzle-kit migrate dev",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

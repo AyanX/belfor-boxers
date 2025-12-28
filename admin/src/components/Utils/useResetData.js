@@ -5,7 +5,7 @@ const useFetchData = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const api = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const api = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
  
   useEffect(() => {
     let isMounted = true; // Prevents state updates on unmounted components

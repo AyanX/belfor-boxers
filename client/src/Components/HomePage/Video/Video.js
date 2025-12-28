@@ -3,19 +3,23 @@ import videojs from "video.js";
 import "video.js/dist/video-js.css";
 import SectionHeader from "../utils/SectionHeader";
 import "./Video.scss";
+
+
 const Video = () => {
-  const videoUrl = "https://ik.imagekit.io/nal7vhb1y/Boxers/boxersw2.mp4";
+  /* const videoUrl = "https://ik.imagekit.io/nal7vhb1y/Boxers/boxersw2.mp4"; */
+  const videoUrl = "https://ik.imagekit.io/59p9lo9mv/boxers.mp4?updatedAt=1765974410489"
   const videoRef = useRef(null);
   const playerRef = React.useRef(null);
 
   const videoJsOptions = {
-    autoplay: true,
+    autoplay: false,
+    preload: "metadata",
     controls: true,
     muted: true,
     loop: true,
     responsive: true,
     fluid: true,
-    poster:"https://ik.imagekit.io/nal7vhb1y/Boxers/IMG_0701_26.jpg",
+    poster: "https://ik.imagekit.io/nal7vhb1y/Boxers/IMG_0701_26.jpg",
     sources: [
       {
         src: videoUrl,
@@ -62,7 +66,7 @@ const Video = () => {
       player.autoplay(options.autoplay);
       player.src(options.sources);
     }
-  }, [options, videoRef,onReady]);
+  }, [options, videoRef, onReady]);
 
   // Dispose the Video.js player when the functional component unmounts
   React.useEffect(() => {

@@ -81,4 +81,24 @@ const deleteMessage = async (req, res) => {
   }
 };
 
-module.exports = { getMessages, postMessage, readMessages, deleteMessage };
+const newMessageCount = async (req, res) => {
+  try {
+    const unread = await db
+      .select()
+      .from(MessagesTable)
+      .where(eq(MessagesTable.read, false));
+    const count = Array.isArray(unread) ? unread.length : 0;
+    return res.status(200).json({ count });
+  } catch (error) {
+    console.error("Error fetching new message count:", error);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+module.exports = {
+  getMessages,
+  postMessage,
+  readMessages,
+  deleteMessage,
+  newMessageCount,
+};

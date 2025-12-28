@@ -7,7 +7,9 @@ const useFetchData = () => {
 
   const [resetData, setResetData] = useState(null);
 
-  const api = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const [messageCount, setMessageCount] =useState(0)
+
+  const api = process.env.REACT_APP_API_BASE_URL
  
   useEffect(() => {
     let isMounted = true; // Prevents state updates on unmounted components
@@ -15,11 +17,14 @@ const useFetchData = () => {
       try {
         const response = await axios.get(`${api}/contacts`);
         const resetResponse = await axios.get(`${api}/reset`);
+        const messageCount = await axios.get(`${api}/count`)
 
         const resetResult = resetResponse.data;
         const result = response.data;
+        const messageLength = messageCount.data
         if (isMounted) {
           setData(result);
+          setMessageCount(messageLength)
           setResetData(resetResult);
           setLoading(false);
         }
@@ -38,7 +43,7 @@ const useFetchData = () => {
     };
   }, [api]);
    // data is an object containing the fetched data
-  return { data, loading, error,resetData };
+  return { data, loading, error,resetData,messageCount };
 };
 
 export default useFetchData;

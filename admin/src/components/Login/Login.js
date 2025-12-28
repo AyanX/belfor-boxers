@@ -24,7 +24,7 @@ export default function LoginPage() {
     });
   };
 
-  const API = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const API = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
