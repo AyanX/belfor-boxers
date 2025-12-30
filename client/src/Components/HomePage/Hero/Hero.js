@@ -1,10 +1,15 @@
 import { HashLink } from "react-router-hash-link";
 import "./Hero.scss";
 import { ArrowRight } from "lucide-react";
-import { useRef, useState } from "react";
+import {  useRef, useState } from "react";
 const Hero = () => {
   const videoRef = useRef(null);
   const [ready, setReady] = useState(false);
+
+
+
+
+
   return (
     <div className="boxing-app">
       <div className="hero-media">
@@ -16,7 +21,8 @@ const Hero = () => {
           playsInline
           preload="metadata"
           className={`video-bg ${ready ? "ready" : ""}`}
-          onLoadedData={() => setReady(true)} b
+          onLoadedData={() => setReady(true)}
+          b
         >
           <source
             src="https://ik.imagekit.io/nal7vhb1y/Boxers/boxers-bg-muted.mp4"

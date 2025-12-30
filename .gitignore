@@ -1,0 +1,35 @@
+# .gitignore
+# Ignore node modules
+node_modules/
+# Ignore build output
+dist/
+build/
+# Ignore environment variable files
+.env
+.env.local
+.env.*.local
+# Ignore log files
+logs/
+*.log
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+# Ignore IDE specific files
+.vscode/
+.idea/
+# Ignore coverage reports
+coverage/
+# Ignore temporary files
+*.tmp
+*.swp
+# Ignore package lock files
+package-lock.json
+yarn.lock
+# Ignore compiled files
+*.class
+*.obj
+*.exe
+# ignore build artifacts
+build/
+out/
+/build/
