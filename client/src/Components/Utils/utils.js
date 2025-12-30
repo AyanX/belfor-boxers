@@ -1,7 +1,7 @@
 export const TESTIMONIAL_DATA = [
   {
     id: "1",
-    name: "John Doe",
+    name: "Joseph Kiggundu",
     role: "Member since 2021",
     content:
       "The training here is intense but incredibly rewarding. I've never been in better shape in my life. The coaches push you to be your best version.",
@@ -10,7 +10,7 @@ export const TESTIMONIAL_DATA = [
   },
   {
     id: "2",
-    name: "Jane Smith",
+    name: "Isaac Tumwesigye",
     role: "Amateur Boxer",
     content:
       "Uncle-T knows how to push you past your limits. A truly transformative experience that taught me discipline I use in my business daily.",
@@ -19,7 +19,7 @@ export const TESTIMONIAL_DATA = [
   },
   {
     id: "3",
-    name: "Mike R.",
+    name: "Joseph K.",
     role: "Fitness Enthusiast",
     content:
       "Great facility, amazing atmosphere, and top-tier coaching. It's not just a gym, it's a brotherhood. Highly recommended.",

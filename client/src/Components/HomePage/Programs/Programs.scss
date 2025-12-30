@@ -31,6 +31,13 @@
     flex-direction: column;
     justify-content: flex-end;
 
+
+    @media (max-width:500px) {
+     height: 370px;
+     @media (max-width:400px){
+      height: 320px;
+     }
+    }
     .card-bg {
       position: absolute;
       top: 0;

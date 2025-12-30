@@ -23,6 +23,7 @@ export default function ProgramCard({
         <h3>{title}</h3>
 
         <div className="price">
+          <span className="period">FROM </span>
           <span className="amount">{price}</span>
           <span className="period">/ mo</span>
         </div>
