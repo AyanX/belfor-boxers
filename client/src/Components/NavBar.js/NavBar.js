@@ -2,6 +2,7 @@ import React from "react";
 import "./NavBar.scss";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -21,7 +22,8 @@ const NavBar = () => {
           </div>
         </div>
 
-        <ul className="links" onClick={() => setIsOpen(false)}>
+        {/* Desktop links (visible on wider screens) */}
+        <ul className="links desktop" onClick={() => setIsOpen(false)}>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -42,6 +44,39 @@ const NavBar = () => {
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
+
+        {/* Mobile links (animated) */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.ul
+              className="links mobile"
+              onClick={() => setIsOpen(false)}
+              initial={{ x: '30%', y: -10, width: 0, opacity: 0 }}
+              animate={{ x: 0, y: 0, width: '100%', opacity: 1, transition: { duration: 0.35, ease: 'easeOut' } }}
+              exit={{ x: '-30%', y: -10, width: 0, opacity: 0, transition: { duration: 0.35, ease: 'easeIn' } }}
+            >
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <HashLink smooth to="/#train">
+                  Training
+                </HashLink>
+              </li>
+              <li>
+                <HashLink smooth to="/contact/#contact">
+                  Schedule
+                </HashLink>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+            </motion.ul>
+          )}
+        </AnimatePresence>
 
         <div className="actions">
           <button className="join">

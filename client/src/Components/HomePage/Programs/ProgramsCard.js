@@ -6,7 +6,6 @@ export default function ProgramCard({
   title,
   price,
   image,
-  tag,
   icon: Icon,
   description,
 }) {

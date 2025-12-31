@@ -8,8 +8,6 @@ const Hero = () => {
 
 
 
-
-
   return (
     <div className="boxing-app">
       <div className="hero-media">

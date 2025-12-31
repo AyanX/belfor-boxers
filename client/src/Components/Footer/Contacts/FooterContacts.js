@@ -27,7 +27,6 @@ const FooterContacts = ({ data }) => {
             </div>
             <div className="address">
               <p>Kampala, Uganda</p>
-              <p>Plot 42, Desert Road</p>
             </div>
           </div>
 
