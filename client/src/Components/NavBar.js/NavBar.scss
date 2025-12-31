@@ -117,7 +117,7 @@ nav.active {
   background: var(--dark);
 }
 
-nav.active .links.mobile {
+.links.mobile {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -129,8 +129,8 @@ nav.active .links.mobile {
   border-bottom: 1px solid rgba(255,255,255,0.1);
   align-items: center;
   gap: 2rem;
-  animation: slideIn 0.3s ease-out;
-  overflow: hidden; /* ensure width animation clips content */
+  overflow: hidden;
+  transform-origin: top right;
 }
 @media (max-width: 1000px){
   nav{

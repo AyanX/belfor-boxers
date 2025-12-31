@@ -7,9 +7,46 @@ import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+const mobileMenuVariants = {
+  hidden: {
+    opacity: 0,
+    scaleX: 0,
+    scaleY: 0,
+    y: -20,
+    transformOrigin: "top right"
+  },
+  visible: {
+    opacity: 1,
+    scaleX: 1,
+    scaleY: 1,
+    y: 0,
+    transformOrigin: "top right",
+    transition: {
+      duration: 0.35,
+      ease: "easeOut"
+    }
+  },
+  exit: {
+    opacity: 0,
+    scaleX: 0,
+    scaleY: 0,
+    y: -20,
+    transformOrigin: "top left",
+    transition: {
+      duration: 0.3,
+      ease: "easeIn"
+    }
+  }
+};
+
+
+
+
+
+
   return (
     <div style={{ height: "80px" }}>
       <nav className={isOpen ? "active" : ""}>
@@ -51,9 +88,10 @@ const NavBar = () => {
             <motion.ul
               className="links mobile"
               onClick={() => setIsOpen(false)}
-              initial={{ x: '30%', y: -10, width: 0, opacity: 0 }}
-              animate={{ x: 0, y: 0, width: '100%', opacity: 1, transition: { duration: 0.35, ease: 'easeOut' } }}
-              exit={{ x: '-30%', y: -10, width: 0, opacity: 0, transition: { duration: 0.35, ease: 'easeIn' } }}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={mobileMenuVariants}
             >
               <li>
                 <Link to="/">Home</Link>
@@ -80,11 +118,9 @@ const NavBar = () => {
 
         <div className="actions">
           <button className="join">
-          
-          <HashLink smooth to="/contact/#contact">
+            <HashLink smooth to="/contact/#contact">
               JOIN NOW
             </HashLink>
-          
           </button>
           <button className="toggle" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={30} /> : <Menu size={30} />}
