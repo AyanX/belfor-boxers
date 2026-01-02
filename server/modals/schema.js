@@ -1,7 +1,7 @@
 
 const {boolean} = require("drizzle-orm/gel-core")
 
-const {mysqlTable, serial, varchar,timestamp} = require("drizzle-orm/mysql-core")
+const {mysqlTable, serial, varchar,timestamp ,int,json} = require("drizzle-orm/mysql-core")
 
 
  const MessagesTable = mysqlTable('messages_table', {
@@ -32,6 +32,13 @@ const AdminTable = mysqlTable('admin_table', {
  password: varchar('password', { length: 255 }).notNull(),
 });
 
+const AcademySettings = mysqlTable('academy_settings', {
+  id: serial('id').primaryKey(),
+  yearFounded: int('year_founded').default(2018),
+  proMembers: int('pro_members').default(0),
+  location: varchar('location', { length: 255 }),
+  trainingHours: json('training_hours') 
+})
 
 
-module.exports = { MessagesTable, ContactsTable, pricesTable, AdminTable }
+module.exports = { MessagesTable, ContactsTable, pricesTable, AdminTable, AcademySettings }

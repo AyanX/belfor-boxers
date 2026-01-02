@@ -7,12 +7,19 @@ const resetRouter = require("./routers/reset.router")
 const { verifyToken } = require("./utils/jwt")
 const adminLoginHandler = require("./controllers/admin.login.controller")
 const { newMessageCount } = require("./controllers/messages.controller")
-
+const  academyRouter  = require("./routers/academy.router")
 const app= express()
+
+
+
+
+
 
 app.use(cors({
     origin: ['https://admin.uncletboxingacademy.com', 
-      'https://uncletboxingacademy.com'],
+      'https://uncletboxingacademy.com',
+      'http://localhost:3000',
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], 
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization']
@@ -30,10 +37,14 @@ app.get("/", (req, res) => {
     res.send("Hello, World!")
 })
 
+app.use( academyRouter)
 
 app.use("/messages", messagesRouter)
 app.use("/contacts", contactsRouter)
 app.post("/login/adm", adminLoginHandler);
+
+
+//protected routes below
 
 app.use(verifyToken)
 

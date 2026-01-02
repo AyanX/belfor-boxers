@@ -1,12 +1,11 @@
-/* const { drizzle } = require("drizzle-orm/mysql2")
+const { drizzle } = require("drizzle-orm/mysql2")
 const mysql2 = require("mysql2/promise")
 const { databaseUrl } = require("../env/env")
 
-
 const db = drizzle(databaseUrl);
-*/
 
 
+/* 
 const { drizzle } = require("drizzle-orm/mysql2");
 const mysql = require("mysql2/promise");
 
@@ -27,5 +26,7 @@ const pool = mysql.createPool({
 const db = drizzle(pool);
 
 console.log("Database pool initialized.");
+ */
+
 
 module.exports = db 
