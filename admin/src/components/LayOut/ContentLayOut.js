@@ -3,8 +3,9 @@ import Contact from "../Contact/Contact";
 import Pricing from "../Pricing/Pricing";
 import Reset from "../Reset/Reset";
 import AppHeader from "../Utils/AppHeader";
+import Academy from "../Academy/Academy";
 
-const ContentLayOut = ({ data: fetchedData, resetData }) => {
+const ContentLayOut = ({ data: fetchedData, resetData, academyData }) => {
   return (
     <div className="app-container">
       <div className="app-wrapper">
@@ -14,7 +15,9 @@ const ContentLayOut = ({ data: fetchedData, resetData }) => {
           <div className="app-grid">
             <Pricing data={fetchedData} />
             <Contact data={fetchedData} />
+           {/*  <Academy academyData={academyData} /> */}
             <Reset data={resetData} />
+
           </div>
         </>
       </div>

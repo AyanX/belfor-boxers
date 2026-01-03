@@ -3,11 +3,11 @@ import Hero from './Hero/Hero'
 import FooterContacts from './Contacts/FooterContacts'
 import "./Footer.scss"
 
-const Footer = ( {data} ) => {
+const Footer = ({data,academyData}) => {
   return (
     <div>
       <Hero />
-      <FooterContacts data={data} />
+      <FooterContacts data={data} academyData={academyData} />
     </div>
   )
 }

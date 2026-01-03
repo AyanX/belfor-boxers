@@ -72,9 +72,14 @@ body {
     color: var(--light);
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     h1 {
       font-size: 1.875rem;
+    }
+  }
+  @media (max-width: 500px) {
+    h1 {
+      font-size: 20px;
     }
   }
 

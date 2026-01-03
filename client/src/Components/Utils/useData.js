@@ -1,20 +1,25 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const useFetchData = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [academyData, setAcademyData] = useState(null);
 
-  const api = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+
+  const api = process.env.REACT_APP_API_URL
  
   useEffect(() => {
     let isMounted = true; // Prevents state updates on unmounted components
     const executeFetch = async () => {
       try {
-        const response = await fetch(`${api}/contacts`);
-        const result = await response.json();
+        const res= await axios.get(`${api}/contacts`);
+        const data = await axios.get(`${api}/academy`);
         if (isMounted) {
-          setData(result);
+          setData(res.data);
+          setAcademyData(data.data);
           setLoading(false);
         }
       } catch (err) {
@@ -32,7 +37,7 @@ const useFetchData = () => {
     };
   }, [api]);
    // data is an object containing the fetched data
-  return { data, loading, error };
+  return { data, loading, error, academyData  };
 };
 
 export default useFetchData;

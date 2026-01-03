@@ -22,7 +22,7 @@ const Error = React.lazy(() => import("./Components/Error/Error"));
 
 const Layout = () => {
 
-  const {data,loading} = useFetchData()
+  const {data,loading,academyData} = useFetchData()
 
   if(loading){
     return <Loader />
@@ -34,9 +34,9 @@ const Layout = () => {
       <ScrollToTop>
         <NavBar />
         <main>
-          <Outlet context={{data}} />
+          <Outlet context={{data, academyData}} />
         </main>
-        <Footer data={data} />
+        <Footer data={data} academyData={academyData} />
       </ScrollToTop>
     </div>
   );

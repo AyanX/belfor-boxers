@@ -1,0 +1,93 @@
+.hours-section {
+  margin-top: 32px;
+}
+
+.hours-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.hours-icon {
+  color: var(--brand-orange);
+}
+
+.hours-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--light);
+  margin: 0;
+}
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.hours-day-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hours-day-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--light);
+  margin: 0;
+}
+
+.hours-sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hours-session-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hours-session-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hours-input-field {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: var(--light);
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.hours-input-field:focus {
+  border-color: rgba(255, 215, 0, 0.7);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+.hours-input-field::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .hours-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

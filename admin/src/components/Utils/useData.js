@@ -9,6 +9,9 @@ const useFetchData = () => {
 
   const [messageCount, setMessageCount] =useState(0)
 
+  const [academyData, setAcademyData] = useState({})
+
+
   const api = process.env.REACT_APP_API_BASE_URL
  
   useEffect(() => {
@@ -18,6 +21,7 @@ const useFetchData = () => {
         const response = await axios.get(`${api}/contacts`);
         const resetResponse = await axios.get(`${api}/reset`);
         const messageCount = await axios.get(`${api}/count`)
+        const academySettings = await axios.get(`${api}/academy`)
 
         const resetResult = resetResponse.data;
         const result = response.data;
@@ -26,6 +30,7 @@ const useFetchData = () => {
           setData(result);
           setMessageCount(messageLength)
           setResetData(resetResult);
+          setAcademyData(academySettings.data);
           setLoading(false);
         }
       } catch (err) {
@@ -43,7 +48,7 @@ const useFetchData = () => {
     };
   }, [api]);
    // data is an object containing the fetched data
-  return { data, loading, error,resetData,messageCount };
+  return { data, loading, error,resetData,messageCount,academyData };
 };
 
 export default useFetchData;

@@ -1,5 +1,7 @@
 import React from "react";
 import { CalendarDays, Users, Trophy } from "lucide-react";
+import { useOutletContext } from "react-router-dom";
+
 
 function StatItem({ icon: Icon, value, label }) {
   return (
@@ -14,12 +16,13 @@ function StatItem({ icon: Icon, value, label }) {
 }
 
 const AboutIntroStats = () => {
+  const { academyData: data } = useOutletContext();
   return (
     <div className="stats">
       <div>
-        <StatItem icon={CalendarDays} value="2015" label="Year Founded" />
+        <StatItem icon={CalendarDays} value={data?.yearFounded || "N/A"} label="Year Founded" />
         <StatItem icon={Users} value="500+" label="Active Members" />
-        <StatItem icon={Trophy} value="12" label="Pro Fighters" />
+        <StatItem icon={Trophy} value={data?.proMembers ? `${data.proMembers}+` : "N/A"} label="Pro Fighters" />
       </div>
     </div>
   );

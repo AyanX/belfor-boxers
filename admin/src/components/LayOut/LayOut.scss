@@ -20,14 +20,14 @@
   gap: 1.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .app-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .reset-section {
-    grid-column: 1 / -1;
+  .reset{
+    margin-top: 70px;
   }
+
 }
 
 @media (max-width: 767px) {

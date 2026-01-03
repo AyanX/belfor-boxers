@@ -4,8 +4,9 @@ import { Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { HashLink } from "react-router-hash-link";
-const FooterContacts = ({ data }) => {
 
+
+const FooterContacts = ({ data, academyData }) => {
   const {phone, email} = data || {};
 
   return (
@@ -26,7 +27,7 @@ const FooterContacts = ({ data }) => {
               </div>
             </div>
             <div className="address">
-              <p>Kampala, Uganda</p>
+              <p>{academyData?.location || "Kampala, Uganda"}</p>
             </div>
           </div>
 

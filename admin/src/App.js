@@ -11,8 +11,8 @@ function App() {
   const routes = createBrowserRouter(createRoutesFromElements(
     <>
       <Route path='/' element={<LayOut />} errorElement={<Error/>}/>
-      <Route path='/login' element={<LoginPage />} />
-      <Route path='/*' element={<Error/>}  />
+      <Route path='/login' element={<LoginPage />} errorElement={<Error/>}/>
+      <Route path='/*' element={<Error/>}  errorElement={<Error/>}/>
     </>
   ))
   return (

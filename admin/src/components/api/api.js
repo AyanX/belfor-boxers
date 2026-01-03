@@ -1,5 +1,6 @@
 import axios from "axios";
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+const API_BASE_URL =
+  process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
 export const updatePricing = async (pricingData) => {
   try {
@@ -20,11 +21,7 @@ export const updatePricing = async (pricingData) => {
 
 export const updateContact = async (contactData) => {
   try {
-
-    const response = await axios.post(
-      `${API_BASE_URL}/contacts`,
-      contactData
-    );
+    const response = await axios.post(`${API_BASE_URL}/contacts`, contactData);
 
     if (response.status !== 201) {
       throw new Error("Failed to update contact info");
@@ -50,12 +47,20 @@ export const updateCredentials = async (credentialsData) => {
   }
 };
 
-export const logout = async ()=>{
+export const logout = async () => {
   try {
     await axios.post(`${API_BASE_URL}/logout/adm`);
-    return 200
+    return 200;
   } catch (error) {
-    console.log("Error logging out")
-    return
+    console.log("Error logging out");
+    return;
   }
-}
+};
+
+export const submitAcademyInfo = async (academyData) => {
+  try {
+    await axios.post(`${API_BASE_URL}/academy`, academyData);
+  } catch (error) {
+    throw error;
+  }
+};

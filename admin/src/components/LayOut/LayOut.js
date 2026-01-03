@@ -8,7 +8,7 @@ import useFetchData from "../Utils/useData";
 import Loader from "../Utils/Loader";
 
 const LayOut = () => {
-  const { data, loading, resetData, error,messageCount } = useFetchData();
+  const { data, loading, resetData, error,messageCount,academyData } = useFetchData();
   const navigate = useNavigate();
 
   if (error) {
@@ -24,7 +24,7 @@ const LayOut = () => {
       <NavBar />
       <Header messageCount={messageCount}/>
       <Messages />
-      <ContentLayOut data={data} resetData={resetData} />
+      <ContentLayOut data={data} resetData={resetData} academyData={academyData} />
     </div>
   );
 };
